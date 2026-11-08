@@ -242,9 +242,96 @@ kbd{background:var(--inset);border:1px solid var(--line);border-bottom-width:2px
   .rcard,.panel{background:#fff;border-color:#bbb;break-inside:avoid}
   .opt,.chip,.t-en{color:#000}
 }
+
+/* ================= DIWALI THEME ================= */
+:root{
+  --bg:#fff3d6; --card:#fffdf6; --card2:#fff8e6; --inset:#fdecc4; --line:#efcf86;
+  --bar:rgba(74,12,26,.97); --track:#f6dca0;
+  --text:#3a1008; --muted:#8a5530;
+  --red:#b3122b; --orange:#f08a0a; --gold:#a8650a; --rose:#b3122b;
+}
+body{
+  background:
+    radial-gradient(800px 420px at 90% 0%, rgba(255,170,40,.28), transparent 62%),
+    radial-gradient(700px 420px at 0% 20%, rgba(200,40,50,.12), transparent 62%),
+    var(--bg);
+  background-attachment:fixed;
+}
+.btn{background:linear-gradient(135deg,#a80f2a,#e8730c 70%,#f5a623);border:1px solid rgba(255,214,120,.7);
+  box-shadow:0 6px 18px rgba(179,18,43,.30),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn.ghost{background:transparent;border:1.5px solid #e2b862;color:var(--text);box-shadow:none}
+.btn.green{background:linear-gradient(135deg,#15803d,#22c55e);border-color:rgba(255,255,255,.35)}
+.btn.purple{background:linear-gradient(135deg,#7e22ce,#a855f7);border-color:rgba(255,255,255,.35)}
+.panel,.rcard{border:1px solid #efcf86;border-top:3px solid #e9b44c;box-shadow:0 8px 22px rgba(168,101,10,.12)}
+.topbar{background:linear-gradient(90deg,#4a0c1a,#7a1424 50%,#4a0c1a);border-bottom:2px solid #e9b44c;color:#ffe9b0}
+.topbar .ttl small{color:#f3c978}
+.topbar .btn.ghost,.actionbar .btn.ghost{color:#ffe9b0;border-color:rgba(233,180,76,.65);background:rgba(255,255,255,.06)}
+.topbar .btn.ghost:hover,.actionbar .btn.ghost:hover{border-color:#ffd36b}
+.timer{color:#fff3d6;background:rgba(255,255,255,.10);border-color:rgba(233,180,76,.7)}
+.actionbar{border-top:2px solid #e9b44c}
+.btn[disabled]{opacity:.55}
+.topbar .logo-s{box-shadow:0 0 0 2px #e9b44c,0 0 14px rgba(255,190,70,.6)}
+
+/* start screen: maroon hero fading into cream */
+#screen-start{background:linear-gradient(180deg,#43091a 0,#7a1424 300px,#b3402a 470px,rgba(255,243,214,0) 700px)}
+.logo-big{box-shadow:0 0 0 3px #f3c978,0 0 0 8px rgba(243,201,120,.25),0 0 60px rgba(255,170,40,.75);animation:dwglow 3s ease-in-out infinite}
+.brand{background:linear-gradient(180deg,#fff6d0,#f8cd5c 55%,#ee9a2c);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+.brand small{color:#ffd36b;-webkit-text-fill-color:#ffd36b}
+#screen-start .sub{color:#f6dca0}
+#screen-start .sub b{color:#ffd36b}
+#screen-start .tag{color:#fff3d6}
+#screen-start .tag span{color:#ffc94d}
+@keyframes dwglow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.12)}}
+
+/* string lights (top of page, scrolls away) */
+.dw-lights{height:24px;position:relative;background:#43091a;overflow:hidden}
+.dw-lights::before,.dw-lights::after{content:"";position:absolute;inset:0;
+  background:
+   radial-gradient(circle at 10px 13px,#ffd36b 0 4px,transparent 5px) 0 0/72px 24px,
+   radial-gradient(circle at 10px 13px,#ff7a2a 0 4px,transparent 5px) 24px 0/72px 24px,
+   radial-gradient(circle at 10px 13px,#ff4d5a 0 4px,transparent 5px) 48px 0/72px 24px;
+  filter:drop-shadow(0 0 4px rgba(255,200,90,.9));animation:dwtw 1.8s ease-in-out infinite}
+.dw-lights::after{background-position:12px 0,36px 0,60px 0;animation-delay:.9s}
+.dw-lights i{position:absolute;left:0;right:0;top:4px;height:1px;background:rgba(233,180,76,.7)}
+@keyframes dwtw{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* greeting + diyas */
+.dw-greet{margin:14px 0 2px;font-weight:800;font-size:26px;letter-spacing:.5px;color:#ffd36b;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.dw-greet small{display:block;font-family:'Poppins',sans-serif;font-weight:500;font-size:12px;letter-spacing:2.5px;color:#f6dca0;text-transform:uppercase;margin-top:2px}
+.dw-diyas{display:flex;justify-content:center;gap:10px;margin:10px 0 2px}
+.dw-diyas svg{width:44px;height:30px;overflow:visible}
+.dw-diyas svg:nth-child(2n) .fl{animation-delay:.35s}
+.dw-diyas svg:nth-child(3n) .fl{animation-delay:.7s}
+.fl{transform-origin:50% 100%;transform-box:fill-box;animation:dwfl 1.1s ease-in-out infinite alternate}
+@keyframes dwfl{0%{transform:scale(1,1) skewX(0)}50%{transform:scale(.92,1.08) skewX(3deg)}100%{transform:scale(1.05,.95) skewX(-3deg)}}
+.dw-rangoli{width:130px;height:130px;margin:26px auto 0;border-radius:50%;opacity:.9;animation:dwspin 40s linear infinite;
+  background:
+   radial-gradient(circle,#b3122b 0 7%,#ffd36b 8% 14%,transparent 15%),
+   repeating-conic-gradient(from 0deg,#f08a0a 0 10deg,#fff3d6 10deg 20deg,#b3122b 20deg 30deg,#ffd36b 30deg 40deg);
+  -webkit-mask:radial-gradient(circle,#000 0 36%,transparent 37% 45%,#000 46% 100%);
+          mask:radial-gradient(circle,#000 0 36%,transparent 37% 45%,#000 46% 100%);
+  filter:drop-shadow(0 4px 10px rgba(179,18,43,.35))}
+@keyframes dwspin{to{transform:rotate(360deg)}}
+
+/* floating sparkles (hidden during the test so nothing distracts) */
+.dw-fx{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:2}
+.dw-fx i{position:absolute;bottom:-20px;color:#f5b82e;font-style:normal;opacity:0;animation:dwrise linear infinite;text-shadow:0 0 8px rgba(255,190,60,.9)}
+@keyframes dwrise{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:.85}100%{transform:translateY(-105vh) scale(1.1) rotate(90deg);opacity:0}}
+body:has(#screen-test:not(.hidden)) .dw-fx{display:none}
+@media (prefers-reduced-motion:reduce){.dw-fx,.dw-rangoli{display:none}.fl,.dw-lights::before,.dw-lights::after,.logo-big{animation:none}}
+@media print{.dw-lights,.dw-fx{display:none!important}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="dwB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd36b"/><stop offset="1" stop-color="#c8741a"/></linearGradient>
+<radialGradient id="dwF" cx="50%" cy="70%" r="60%"><stop offset="0" stop-color="#fff6c8"/><stop offset=".5" stop-color="#ffb52e"/><stop offset="1" stop-color="#ff6a1a"/></radialGradient>
+<g id="dwDiya"><ellipse cx="22" cy="9" rx="13" ry="7" fill="rgba(255,190,60,.28)"/>
+<path class="fl" d="M22 1 C27 7 27 12 22 15 C17 12 17 7 22 1Z" fill="url(#dwF)"/>
+<path d="M4 15 Q22 12 40 15 Q38 27 22 28 Q6 27 4 15Z" fill="url(#dwB)" stroke="#8a4a0a" stroke-width=".8"/>
+<path d="M9 18 Q22 21 35 18" fill="none" stroke="#fff0b0" stroke-width="1" opacity=".7"/></g>
+</defs></svg><div class="dw-lights" aria-hidden="true"><i></i></div><div class="dw-fx" aria-hidden="true"><i style="left:43%;font-size:12px;animation-duration:10.8s;animation-delay:0.6s">✦</i><i style="left:14%;font-size:15px;animation-duration:12.1s;animation-delay:10.9s">✦</i><i style="left:6%;font-size:11px;animation-duration:11.0s;animation-delay:0.8s">✦</i><i style="left:72%;font-size:16px;animation-duration:8.4s;animation-delay:6.8s">✦</i><i style="left:82%;font-size:20px;animation-duration:12.1s;animation-delay:0.7s">✦</i><i style="left:52%;font-size:10px;animation-duration:14.8s;animation-delay:0.6s">✦</i><i style="left:39%;font-size:16px;animation-duration:9.0s;animation-delay:1.4s">✧</i><i style="left:73%;font-size:20px;animation-duration:9.3s;animation-delay:7.0s">✦</i><i style="left:26%;font-size:15px;animation-duration:8.7s;animation-delay:8.5s">✦</i><i style="left:9%;font-size:19px;animation-duration:9.4s;animation-delay:8.2s">✧</i><i style="left:42%;font-size:17px;animation-duration:12.1s;animation-delay:5.4s">✧</i><i style="left:33%;font-size:12px;animation-duration:12.9s;animation-delay:2.9s">✦</i><i style="left:40%;font-size:18px;animation-duration:11.5s;animation-delay:4.1s">✧</i><i style="left:38%;font-size:19px;animation-duration:14.9s;animation-delay:1.4s">✧</i><i style="left:23%;font-size:15px;animation-duration:9.1s;animation-delay:5.9s">✦</i><i style="left:87%;font-size:11px;animation-duration:13.4s;animation-delay:6.9s">✧</i></div>
 
 <!-- ================= START ================= -->
 <section id="screen-start" class="screen">
@@ -253,6 +340,7 @@ kbd{background:var(--inset);border:1px solid var(--line);border-bottom-width:2px
     <h1 class="brand">अंतिम प्रहार<small>TM</small></h1>
     <div class="sub">The Last Phase Of <b>Preparation</b></div>
     <div class="tag">तैयारी आज की, <span>जीत कल की!</span></div>
+<div class="dw-greet">शुभ दीपावली<small>Happy Diwali</small></div><div class="dw-diyas"><svg viewBox="0 0 44 30" aria-hidden="true"><use href="#dwDiya"/></svg><svg viewBox="0 0 44 30" aria-hidden="true"><use href="#dwDiya"/></svg><svg viewBox="0 0 44 30" aria-hidden="true"><use href="#dwDiya"/></svg><svg viewBox="0 0 44 30" aria-hidden="true"><use href="#dwDiya"/></svg><svg viewBox="0 0 44 30" aria-hidden="true"><use href="#dwDiya"/></svg></div>
 
     <div id="resumeBox" class="resume hidden">
       <p><b>एक अधूरा टेस्ट मिला है।</b> आप वहीं से आगे बढ़ सकते हैं जहाँ छोड़ा था।</p>
@@ -298,7 +386,7 @@ kbd{background:var(--inset);border:1px solid var(--line);border-bottom-width:2px
 
       <button class="btn start-btn" id="btnStart">निर्देश पढ़ें और आगे बढ़ें →</button>
     </div>
-    <div class="foot">अंतिम प्रहार™ · संकल्प · मेहनत · लगातार प्रयास · समर्पण · सफलता</div>
+    <div class="dw-rangoli" aria-hidden="true"></div><div class="foot">अंतिम प्रहार™ · संकल्प · मेहनत · लगातार प्रयास · समर्पण · सफलता</div>
   </div>
 </section>
 
@@ -829,6 +917,41 @@ function buildCard(){
     var line = r.pct >= 80 ? 'शानदार प्रदर्शन!' : r.pct >= 60 ? 'बहुत बढ़िया, जीत पक्की!' : r.pct >= 40 ? 'अच्छी कोशिश, आगे और बेहतर!' : 'हार मत मानो, अगला टेस्ट मेरा है!';
     ftxt(c,line+'  क्या तुम मुझे हरा सकते हो?',W/2,1250,920,34,700,'#e9b44c');
     ftxt(c,'तैयारी आज की, जीत कल की!  ·  अंतिम प्रहार™',W/2,1304,920,28,600,'#b9a398');
+    /* ---- Diwali touches on the share card ---- */
+    function dwDiya(x,y,s){
+      c.save(); c.translate(x,y); c.scale(s,s);
+      var gl = c.createRadialGradient(0,-26,2,0,-26,60);
+      gl.addColorStop(0,'rgba(255,190,60,.55)'); gl.addColorStop(1,'rgba(255,190,60,0)');
+      c.fillStyle = gl; c.beginPath(); c.arc(0,-26,60,0,Math.PI*2); c.fill();
+      var f = c.createLinearGradient(0,-60,0,-12);
+      f.addColorStop(0,'#fff6c8'); f.addColorStop(.5,'#ffb52e'); f.addColorStop(1,'#ff6a1a');
+      c.fillStyle = f; c.beginPath(); c.moveTo(0,-62);
+      c.bezierCurveTo(18,-40,18,-22,0,-12); c.bezierCurveTo(-18,-22,-18,-40,0,-62); c.fill();
+      var b = c.createLinearGradient(0,-10,0,30);
+      b.addColorStop(0,'#ffd36b'); b.addColorStop(1,'#b8650f');
+      c.fillStyle = b; c.beginPath(); c.moveTo(-46,-8);
+      c.quadraticCurveTo(0,-18,46,-8); c.quadraticCurveTo(40,30,0,32); c.quadraticCurveTo(-40,30,-46,-8); c.fill();
+      c.strokeStyle = '#7a3f08'; c.lineWidth = 2; c.stroke();
+      c.restore();
+    }
+    dwDiya(185,230,1.0); dwDiya(895,230,1.0);
+    ftxt(c,'✦  शुभ दीपावली  ✦',W/2,64,640,34,800,'#ffd36b');
+    var cols = ['#ffd36b','#ff7a2a','#ff4d5a'];
+    for(var i=0;i<26;i++){
+      var gx = 70 + i*40.4; if(gx>400 && gx<680) continue;
+      c.fillStyle = cols[i%3]; c.shadowColor = cols[i%3]; c.shadowBlur = 14;
+      c.beginPath(); c.arc(gx, 46 + (i%2?6:0), 6, 0, Math.PI*2); c.fill();
+    }
+    c.shadowBlur = 0;
+    var sp = [[70,330],[1010,360],[90,520],[995,560],[60,760],[1020,800],[85,980],[1000,1010],[70,1180],[1010,1200],[150,1290],[930,1290]];
+    sp.forEach(function(p,i){
+      c.fillStyle = i%2 ? '#ffd36b' : '#ff9a3a'; c.shadowColor = c.fillStyle; c.shadowBlur = 16;
+      var s = 9 + (i%3)*4; c.beginPath();
+      c.moveTo(p[0],p[1]-s*2); c.quadraticCurveTo(p[0],p[1],p[0]+s*2,p[1]);
+      c.quadraticCurveTo(p[0],p[1],p[0],p[1]+s*2); c.quadraticCurveTo(p[0],p[1],p[0]-s*2,p[1]);
+      c.quadraticCurveTo(p[0],p[1],p[0],p[1]-s*2); c.fill();
+    });
+    c.shadowBlur = 0;
     return cv;
   });
 }
